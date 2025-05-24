@@ -1,40 +1,290 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
+    <!-- PASO 1: CONFIGURACIÓN BÁSICA DEL DOCUMENTO -->
+    <!-- Configuramos la codificación y viewport para responsive design -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>🌍 Registro Viajero</title>
+
+    <!-- PASO 2: TÍTULO Y ENLACES -->
+    <!-- Título descriptivo con emojis para temática de viajes -->
+    <title>🌍 Registro de Viajes - Tu Aventura Comienza Aquí</title>
+
+    <!-- Enlace al archivo de estilos CSS -->
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <!-- Contenedor principal -->
+    <!-- PASO 3: CONTENEDOR PRINCIPAL -->
+    <!-- Contenedor que mantiene todas las pantallas organizadas -->
     <div class="container">
-      <!-- Pantalla principal -->
+      <!-- ========================================= -->
+      <!-- PASO 4: PANTALLA PRINCIPAL (MENÚ INICIAL) -->
+      <!-- ========================================= -->
+      <!-- Esta es la primera pantalla que ve el usuario -->
+      <!-- Clase 'active' hace que se muestre por defecto -->
       <div id="main-screen" class="screen active">
-        <!-- Contenedor de la pantalla principal -->
         <div class="main-container">
+          <!-- Título principal con emoji de mundo -->
           <h1>🌍 Registro de Viajes</h1>
-          <!-- Secccion de bienvenida -->
+
+          <!-- Sección de bienvenida con elementos visuales -->
           <div class="welcome-section">
+            <!-- Icono animado de avión -->
             <div class="travel-icon">✈️</div>
+            <!-- Mensajes motivacionales con temática de viajes -->
             <p class="subtitle">¡Tu próxima aventura te espera!</p>
             <p class="description">
               Registra tu información y planifica el viaje de tus sueños
             </p>
           </div>
 
+          <!-- Botones principales del menú -->
           <div class="main-buttons">
+            <!-- Botón para iniciar nuevo registro -->
             <button class="btn-main" id="new-registration-btn">
               <span class="btn-icon">🎒</span>
-              <span>Nuevo registro de Viaje</span>
+              <span class="btn-text">Nuevo Registro de Viaje</span>
             </button>
+
+            <!-- Botón para ver usuarios registrados -->
             <button class="btn-main" id="view-users-btn">
               <span class="btn-icon">👥</span>
-              <span>Ver Viajeros Registrados</span>
+              <span class="btn-text">Ver Viajeros Registrados</span>
             </button>
           </div>
         </div>
       </div>
+
+      <!-- ========================================= -->
+      <!-- PASO 5: PANTALLAS DE REGISTRO INDIVIDUAL -->
+      <!-- ========================================= -->
+
+      <!-- PANTALLA 1: NOMBRE DE USUARIO -->
+      <!-- Primera pantalla del proceso de registro -->
+      <div id="username-screen" class="screen">
+        <div class="form-container">
+          <!-- Indicador de progreso para orientar al usuario -->
+          <div class="step-indicator">📝 Paso 1 de 5</div>
+
+          <!-- Título con emoji relacionado -->
+          <h1>🆔 Tu Nombre de Usuario</h1>
+
+          <!-- Subtítulo explicativo -->
+          <p class="screen-subtitle">
+            ¿Cómo quieres que te identifiquemos en tu aventura?
+          </p>
+
+          <!-- Formulario para capturar el username -->
+          <form id="username-form">
+            <div class="input-group">
+              <!-- Label con icono y texto descriptivo -->
+              <label for="username">
+                <span class="label-icon">👤</span>
+                Nombre de Usuario:
+              </label>
+              <!-- Input con placeholder ejemplo -->
+              <input
+                type="text"
+                id="username"
+                placeholder="Ej: aventurero2024"
+                required
+              />
+            </div>
+
+            <!-- Botón para continuar al siguiente paso -->
+            <button type="submit" class="btn-primary">Continuar ➡️</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- PANTALLA 2: NOMBRE COMPLETO -->
+      <!-- Segunda pantalla del proceso -->
+      <div id="fullname-screen" class="screen">
+        <div class="form-container">
+          <!-- Indicador de progreso actualizado -->
+          <div class="step-indicator">📝 Paso 2 de 5</div>
+
+          <!-- Título amigable y personal -->
+          <h1>👋 ¡Encantado de conocerte!</h1>
+          <p class="screen-subtitle">Ahora dinos tu nombre completo</p>
+
+          <!-- Formulario para nombre completo -->
+          <form id="fullname-form">
+            <div class="input-group">
+              <label for="fullname">
+                <span class="label-icon">✨</span>
+                Nombre Completo:
+              </label>
+              <input
+                type="text"
+                id="fullname"
+                placeholder="Ej: Juan Pérez García"
+                required
+              />
+            </div>
+            <button type="submit" class="btn-primary">Continuar ➡️</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- PANTALLA 3: NÚMERO DE HABITACIONES -->
+      <!-- Tercera pantalla - información del alojamiento -->
+      <div id="rooms-screen" class="screen">
+        <div class="form-container">
+          <!-- Indicador con emoji de hotel -->
+          <div class="step-indicator">🏨 Paso 3 de 5</div>
+
+          <!-- Título relacionado con alojamiento -->
+          <h1>🏠 Alojamiento</h1>
+          <p class="screen-subtitle">
+            ¿Cuántas habitaciones necesitas para tu estadía?
+          </p>
+
+          <!-- Formulario para habitaciones -->
+          <form id="rooms-form">
+            <div class="input-group">
+              <label for="rooms">
+                <span class="label-icon">🏨</span>
+                Número de Habitaciones:
+              </label>
+              <!-- Input numérico con límites -->
+              <input
+                type="number"
+                id="rooms"
+                min="1"
+                max="10"
+                placeholder="Ej: 2"
+                required
+              />
+            </div>
+            <button type="submit" class="btn-primary">Continuar ➡️</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- PANTALLA 4: SELECCIÓN DE DESTINO -->
+      <!-- Cuarta pantalla - elegir país de destino -->
+      <div id="destination-screen" class="screen">
+        <div class="form-container">
+          <!-- Indicador con emoji de mapa -->
+          <div class="step-indicator">🗺️ Paso 4 de 5</div>
+
+          <!-- Título emocionante sobre destinos -->
+          <h1>🌍 Tu Destino</h1>
+          <p class="screen-subtitle">
+            ¿A dónde te llevará tu próxima aventura?
+          </p>
+
+          <!-- Formulario con dropdown de destinos -->
+          <form id="destination-form">
+            <div class="input-group">
+              <label for="destination">
+                <span class="label-icon">📍</span>
+                Selecciona tu destino:
+              </label>
+              <!-- Select con opciones predefinidas y emojis de banderas -->
+              <select id="destination" required>
+                <option value="">🗺️ Elige tu destino...</option>
+                <option value="España">
+                  España - Tierra de pasión y cultura
+                </option>
+                <option value="Portugal">Portugal - Belleza atlántica</option>
+                <option value="Grecia">Grecia - Cuna de la civilización</option>
+              </select>
+            </div>
+            <button type="submit" class="btn-primary">Continuar ➡️</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- PANTALLA 5: DURACIÓN DEL VIAJE -->
+      <!-- Quinta y última pantalla del registro -->
+      <div id="days-screen" class="screen">
+        <div class="form-container">
+          <!-- Indicador final con emoji de calendario -->
+          <div class="step-indicator">📅 Paso 5 de 5</div>
+
+          <!-- Título sobre duración -->
+          <h1>⏰ Duración del Viaje</h1>
+          <p class="screen-subtitle">¿Cuántos días durará tu aventura?</p>
+
+          <!-- Formulario final -->
+          <form id="days-form">
+            <div class="input-group">
+              <label for="days">
+                <span class="label-icon">📅</span>
+                Número de Días:
+              </label>
+              <!-- Input numérico con rango amplio -->
+              <input
+                type="number"
+                id="days"
+                min="1"
+                max="365"
+                placeholder="Ej: 7"
+                required
+              />
+            </div>
+            <!-- Botón final con mensaje de completar -->
+            <button type="submit" class="btn-primary">
+              🎉 ¡Completar Registro!
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <!-- ========================================= -->
+      <!-- PASO 6: PANTALLA DE CONFIRMACIÓN -->
+      <!-- ========================================= -->
+      <!-- Pantalla que se muestra después de completar el registro -->
+      <div id="confirmation-screen" class="screen">
+        <div class="confirmation-container">
+          <!-- Título de éxito -->
+          <h1>🎉 ¡Registro Completado!</h1>
+
+          <!-- Icono de éxito animado -->
+          <div class="success-icon">✅</div>
+
+          <!-- Mensaje de confirmación -->
+          <p class="confirmation-text">
+            Tu viaje ha sido registrado exitosamente
+          </p>
+
+          <!-- Contenedor para el resumen del viaje (se llena con JavaScript) -->
+          <div id="trip-summary"></div>
+
+          <!-- Botón para volver al menú principal -->
+          <button class="btn-primary" id="back-to-main-btn">
+            🏠 Volver al Inicio
+          </button>
+        </div>
+      </div>
+
+      <!-- ========================================= -->
+      <!-- PASO 7: PANTALLA DE LISTA DE USUARIOS -->
+      <!-- ========================================= -->
+      <!-- Pantalla que muestra todos los viajeros registrados -->
+      <div id="users-list" class="screen">
+        <div class="list-container">
+          <!-- Título de la lista -->
+          <h1>👥 Viajeros Registrados</h1>
+
+          <!-- Subtítulo motivacional -->
+          <p class="list-subtitle">🌟 Conoce a otros aventureros como tú</p>
+
+          <!-- Contenedor donde se mostrarán las tarjetas de usuarios (llenado por JavaScript) -->
+          <div id="users-content"></div>
+
+          <!-- Botón para regresar al menú principal -->
+          <button class="btn-secondary" id="back-to-main-menu-btn">
+            🏠 Volver al Menú Principal
+          </button>
+        </div>
+      </div>
     </div>
+
+    <!-- PASO 8: ENLACE AL ARCHIVO JAVASCRIPT -->
+    <!-- Incluimos el archivo JS que manejará toda la lógica -->
+    <script src="index.js"></script>
   </body>
 </html>
